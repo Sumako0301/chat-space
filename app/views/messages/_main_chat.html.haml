@@ -1,0 +1,23 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      %h2.main-header__left-box__current-group{"data-group_id" => "4512"}
+        Sample
+      %ul.main-header__left-box__member-list
+        Member：
+        %li.main-header__left-box__member-list__member Sumako Sugimori
+    .main-header__right-box
+      =link_to 'edit', "/groups/4512/edit", class: "main-header__edit-btn"
+      -# /%a{:href => "/groups/4512/edit"
+      -# .main-header__edit-btn Edit
+  .messages
+  .form
+    %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "/groups/4512/messages", :enctype => "multipart/form-data", :method => "post"}
+      %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+      %input{:name => "authenticity_token", :type => "hidden", :value => "tr2gIWek2yCepCXme0ugT6SszKkpQ0fRUd0d2OdwZqcUSKFu4ix96C1CBhmTOG7d5VSw4GxDFjiCQY5kdgcFNA=="}/
+      .input-box
+        %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+        %label.input-box__image{:for => "message_image"}
+          %i.fa.fa-image
+          %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
+      %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
