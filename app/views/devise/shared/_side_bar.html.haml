@@ -1,0 +1,62 @@
+.side-bar
+  .header
+    %h3.header__name
+      = current_user.name
+      ユーザーネーム
+    %ul.header__lists
+      %li.list
+        = link_to do
+          = fa_icon 'pencil-square-o', class: 'icon'
+      %li.list
+        = link_to edit_user_path(current_user) do
+          = fa_icon 'cog', class: 'icon'
+  .groups
+    .group
+      .group__name
+        グループ名
+      .group__message
+        新着メッセージ
+    .group
+      .group__name
+        グループ名
+      .group__message
+        新着メッセージ
+    .group
+      .group__name
+        グループ名
+      .group__message
+        新着メッセージ
+
+
+
+
+
+
+-# .side_bar
+-#   .side__header
+-#     .side__header__box
+-#       .side__header__box__name
+-#         Sumako Sugimori
+-#       .side__header__box__menu
+
+
+-#         =link_to new_group_path class: "side__header__box__menu__new__group" do
+-#           %i.fa.fa-edit
+-#         =link_to "#", class: "side__header__box__menu__edit__user" do
+-#           %i.fa.fa-cog
+
+  -# .groups
+  -#   - current_user.groups.each do |group|
+  -#     .groups__group
+  -#       = link_to '#' do
+  -#         .group__name
+  -#           = group.name
+  -#         .latest-message
+  -#           メッセージはまだありません。
+
+  
+
+        
+
+
+ 
