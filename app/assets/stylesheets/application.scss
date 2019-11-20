@@ -1,11 +1,10 @@
 @import "./reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import"./_side_bar.scss";
-@import"./_main_chat.scss";
-// @import"./_group.scss";
-// @import "./_user.scss";
-@import "config/colors";
-@import "modules/flash";
+@import"./side_bar";
+@import"./main_chat";
+
+@import "./config/colors";
+@import "./modules/user";
+@import "./modules/flash";
 @import "modules/group";
-@import "modules/user";

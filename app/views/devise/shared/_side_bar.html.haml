@@ -1,105 +1,27 @@
 .side-bar
-  .header
-    %h3.header__name
-      = current_user.name
-    %ul.header__lists
-      %li.list
-        = link_to new_group_path do
-          = icon('fas', 'edit', class: 'icon')
-      %li.list
-        = link_to edit_user_path(current_user) do
-          = icon('fas', 'cog', class: 'icon')
-  .groups
+  .side-header
+    .side-header__box
+      %p.side-header__box__name
+        = current_user.name
+        
+      %ul.side-header__box__menu
+        %li.side-header__box__menu__new-group
+          =link_to new_group_path do
+            %i.fa.fa-edit
+        %li.side-header__box__menu__edit-user
+          = link_to edit_user_path(current_user) do
+            %i.fa.fa-cog
+
+  .side-groups
     - current_user.groups.each do |group|
-      .group
-        = link_to group_messages_path(group) do
-          .group__name
+      .side-groups__group
+        = link_to group_messages_path(group), class: "side-groups__group" do
+          .side-groups__group__group-name
             = group.name
-          .group__message
-            メッセージはまだありません。
--# .side_bar
--#   .side__header
--#     .side__header__box
--#       %h3.side__header__box__name
--#         = current_user.name
-       
--#       %ul.side__header__box__menu
--#         %li.side__header__box__menu__new__group
--#         =link_to new_group_path do
--#           %i.fa.fa-edit
--#         %li.side__header__box__menu__edit__user  
--#         = link_to edit_user_path(current_user) do
--#           %i.fa.fa-cog
-
-
--# .side_bar
--#   .header
--#     %h3.header__name
--#       = current_user.name
--#       ユーザーネーム
--# -#     %ul.header__lists
-
--#       %li.side__header__box__menu__new__group
--#         =link_to new_group_path do
--#           %i.fa.fa-edit
-
--#       %li.side__header__box__menu__edit__user
--#         =link_to "#" do
--#           %i.fa.fa-cog
-          
-      -#   = link_to new_group_path do
-      -#     = fa_icon 'pencil-square-o', class: 'icon'
-     
-      -#   = link_to edit_user_path(current_user) do
-      -#     = fa_icon 'cog', class: 'icon'
-  -# .groups
-  -#   - current_user.groups.each do |group|
-  -#     .group
-  -#       = link_to '#' do
-  -#         .group__name
-  -#           = group.name
-  -#         .group__message
-  -#           メッセージはまだありません。
-    .group
-      .group__name
-        グループ名
-      .group__message
-        新着メッセージ
-    .group
-      .group__name
-        グループ名
-      .group__message
-        新着メッセージ
+          .side-groups__group__latest-message          
+            = group.show_last_message
 
 
 
-
-
--# .side_bar
--#   .side__header
--#     .side__header__box
--#       .side__header__box__name
--#         Sumako Sugimori
--#       .side__header__box__menu
-
-
--#         =link_to new_group_path class: "side__header__box__menu__new__group" do
--#           %i.fa.fa-edit
--#         =link_to "#", class: "side__header__box__menu__edit__user" do
--#           %i.fa.fa-cog
-
-  -# .groups
-  -#   - current_user.groups.each do |group|
-  -#     .groups__group
-  -#       = link_to '#' do
-  -#         .group__name
-  -#           = group.name
-  -#         .latest-message
-  -#           メッセージはまだありません。
 
   
-
-        
-
-
- 
