@@ -69,3 +69,7 @@ gem 'rspec-rails'
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
