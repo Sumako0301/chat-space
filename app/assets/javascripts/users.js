@@ -2,8 +2,8 @@ $(function() {
   function addUser(user) {
     let html = `
       <div class="chat-group-user clearfix">
-        <p class="chat-group-user__name">${user.name}</p>
-        <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</div>
+        <p class="chat-group-user__name">${user.user_name}</p>
+        <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.user_name">追加</div>
       </div>
     `;
     $("#user-search-result").append(html);
@@ -29,7 +29,7 @@ $(function() {
     let html = `<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}" />`;
     $(`#${userId}`).append(html);
   }
-  $("#user-search-field").on("keyup", function() {
+  $("#user-search-field").on("keyup", function(e) {
     let input = $("#user-search-field").val();
     $.ajax({
       type: "GET",
