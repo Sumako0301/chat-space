@@ -3,11 +3,13 @@
   color: #fff;
   float: left;
 }
-
 a {
+  font-size: 16px;
   color: #fff;
   margin-left: 0.3rem;
+  
 }
+
 
 .side-header {
   background-color: #253141;
@@ -38,19 +40,20 @@ a {
   padding: 20px 20px 0;
   overflow: scroll;
 
-  & a{
-    text-decoration: none;
-  }
-
   &__group {
     margin-bottom: 40px;
-
+    display: flex;
+    flex-direction: column;
+    a{
+      text-decoration: none;
+    }
+    
     &__group-name{
       font-size: 15px;
       margin-bottom: 5px;
     }
 
-    &__latesr-message {
+    &__latest-message {
         font-size: 11px;
       }
 
